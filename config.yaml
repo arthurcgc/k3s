@@ -1,9 +1,12 @@
-kube-controller-manager-arg: 
-  - "bind-address=0.0.0.0"
-kube-proxy-arg: 
-  - "metrics-bind-address=0.0.0.0"
-kube-scheduler-arg: 
-  - "bind-address=0.0.0.0"
+# kube-controller-manager-arg: 
+#   - "bind-address=0.0.0.0"
+# kube-proxy-arg: 
+#   - "metrics-bind-address=0.0.0.0"
+# kube-scheduler-arg: 
+#   - "bind-address=0.0.0.0"
+node-external-ip: "192.168.0.23"
+flannel-backend: "host-gw"
+flannel-external-ip: true
 write-kubeconfig-mode: 644
 disable-network-policy: true
 service-node-port-range: "1-65000"
