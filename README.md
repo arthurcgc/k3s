@@ -1,4 +1,4 @@
-# my k3s local config
+# K3s Home Setup Config
 I prefer using config.yaml, all the other options to bootup k3s seem too chaotic for me
 
 # Usage
