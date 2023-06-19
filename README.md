@@ -1,7 +1,8 @@
 # my k3s local config
-I prefer using config.ymal, all the other options seem too chaotic to me
+I prefer using config.yaml, all the other options to bootup k3s seem too chaotic for me
 
 # Usage
-just copy config.yaml to /etc/rancher/k3s (mkdir if doesn't exist) and `curl -sfL https://get.k3s.io | sh -`
+`make install` should work OTB
 
-You can test the configuration with the nginx deployment in the repo
+# First Deployment
+kubectl apply -f nginx/nginx.yaml
