@@ -306,9 +306,13 @@ doh:
 
 dnsmasq:
   # -- Add upstream dns servers. All lines will be added to the pihole dnsmasq configuration
-  upstreamServers: []
+  upstreamServers:
   # - server=/foo.bar/192.168.178.10
   # - server=/bar.foo/192.168.178.11
+    - server=/googleipv4/8.8.8.8
+    - server=/googleipv4_2/8.8.4.4
+    - server=/googleipv6/2001:4860:4860::8888
+    - server=/googleipv6/2001:4860:4860::8844
 
   # -- Add custom dns entries to override the dns resolution. All lines will be added to the pihole dnsmasq configuration.
   customDnsEntries: []
@@ -345,10 +349,20 @@ dnsmasq:
   #   - cname=cname record,dns record
 
 # -- list of adlists to import during initial start of the container
-adlists: {}
+adlists:
   # If you want to provide blocklists, add them here.
   # - https://hosts-file.net/grm.txt
   # - https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
+  - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  - https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
+  - https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts
+  - https://v.firebog.net/hosts/static/w3kbl.txt
+  - https://adaway.org/hosts.txt
+  - https://v.firebog.net/hosts/AdguardDNS.txt
+  - https://v.firebog.net/hosts/Admiral.txt
+  - https://v.firebog.net/hosts/Easyprivacy.txt
+  - https://v.firebog.net/hosts/Prigent-Ads.txt
+  - https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts
 
 # -- list of whitelisted domains to import during initial start of the container
 whitelist: {}
