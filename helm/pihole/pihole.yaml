@@ -92,7 +92,6 @@ serviceDhcp:
 serviceWeb:
   # -- Configuration for the HTTP web interface listener
   http:
-
     # -- Generate a service for HTTP traffic
     enabled: true
 
@@ -261,6 +260,10 @@ DNS1: "8.8.8.8"
 # -- default upstream DNS 2 server to use
 DNS2: "8.8.4.4"
 
+DNS3: "2001:4860:4860::8888"
+
+DNS4: "2001:4860:4860::8844"
+
 antiaff:
   # -- set to true to enable antiaffinity (example: 2 pihole DNS in the same cluster)
   enabled: false
@@ -309,10 +312,6 @@ dnsmasq:
   upstreamServers:
   # - server=/foo.bar/192.168.178.10
   # - server=/bar.foo/192.168.178.11
-    - server=/googleipv4/8.8.8.8
-    - server=/googleipv4_2/8.8.4.4
-    - server=/googleipv6/2001:4860:4860::8888
-    - server=/googleipv6/2001:4860:4860::8844
 
   # -- Add custom dns entries to override the dns resolution. All lines will be added to the pihole dnsmasq configuration.
   customDnsEntries: []
@@ -331,6 +330,8 @@ dnsmasq:
 
   # -- Other options
   customSettings:
+    # permit all origins
+    - except-interface=nonexisting
   # otherSettings:
   # - rebind-domain-ok=/plex.direct/
 
